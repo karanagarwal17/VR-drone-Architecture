@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<string.h>
 
 int idstate(char a[],int i){
   if(a[i]=='\0'){
@@ -41,9 +42,15 @@ int idstate(char a[],int i){
   }
 }
 
+void binary(int x){
+
+}
+
 void otob(char a[]){
-  int n,i=0;
-  while(a[i]!=' '){
+  int n,i=0,x;
+  char t[30],b[30],c[30];
+  strcpy(t,a);
+  while(a[i]!=' ' && a[i]!='\0'){
     i++;
   }
   i++;
@@ -53,16 +60,153 @@ void otob(char a[]){
   i++;
   a[i]='0'+n;
   i++;
-  a[i]='-';
-  i++;
   a[i]='\0';
   printf("%s\n",a);
   FILE *fp;
-  fp = fopen("mnemonics.txt","r");
-  printf("%d\n",n);
+  fp = fopen("MNEMONICS.txt","r");
+  while(1){
+    fscanf(fp,"%[^-]",c);
+    fseek(fp,sizeof(char),SEEK_CUR);
+    fscanf(fp,"%s\n",b);
+    i=strlen(c);
+    c[i]='\0';
+    if(strcmp(c,a)==0){
+      break;
+    }
+    if(feof(fp))
+      break;
+  }
+  printf("%s\n",b);
+  i=0;
+  switch(n){
+    case 0: break;
+    case 1: {
+      while(t[i]!='#'){
+        i++;
+      }
+      i++;
+      x=0;
+      while(t[i]!='\0'){
+        x*=10;
+        x+=t[i]-'0';
+        i++;
+      }
+      binary(x);
+    }break;
+    case 2: {
+      while(t[i]!='@'){
+        i++;
+      }
+      i+=2;
+      x=0;
+      while(t[i]!='\0'){
+        x*=10;
+        x+=t[i]-'0';
+        i++;
+      }
+      binary(x);
+    }break;
+    case 3:{
+      while(t[i]!='R'){
+        i++;
+      }
+      i++;
+      x=0;
+      while(t[i]!='\0'){
+        x*=10;
+        x+=t[i]-'0';
+        i++;
+      }
+      binary(x);
+    }break;
+    case 4: {
+      while(t[i]!='#'){
+        i++;
+      }
+      i++;
+      x=0;
+      while(t[i]!=','){
+        x*=10;
+        x+=t[i]-'0';
+        i++;
+      }
+      binary(x);
+      i+=2;
+      x=0;
+      while(t[i]!='\0'){
+        x*=10;
+        x+=t[i]-'0';
+        i++;
+      }
+      binary(x);
+    }break;
+    case 5: {
+      while(t[i]!='@'){
+        i++;
+      }
+      i+=2;
+      x=0;
+      while(t[i]!=','){
+        x*=10;
+        x+=t[i]-'0';
+        i++;
+      }
+      binary(x);
+      i+=3;
+      x=0;
+      while(t[i]!='\0'){
+        x*=10;
+        x+=t[i]-'0';
+        i++;
+      }
+      binary(x);
+    }break;
+    case 6: {
+      while(t[i]!='R'){
+        i++;
+      }
+      i++;
+      x=0;
+      while(t[i]!=','){
+        x*=10;
+        x+=t[i]-'0';
+        i++;
+      }
+      binary(x);
+      i+=2;
+      x=0;
+      while(t[i]!='\0'){
+        x*=10;
+        x+=t[i]-'0';
+        i++;
+      }
+      binary(x);
+    }break;
+    case 7: {
+      while(t[i]!='#'){
+        i++;
+      }
+      i++;
+      x=0;
+      while(t[i]!=','){
+        x*=10;
+        x+=t[i]-'0';
+        i++;
+      }
+      binary(x);
+      i+=2;
+      x=0;
+      while(t[i]!='\0'){
+        x*=10;
+        x+=t[i]-'0';
+        i++;
+      }
+      binary(x);
+    }break;
+  }
 }
 
 void main(){
-  char a[15] = "MOVE #55,R2";
+  char a[30] = "MOV #87,R65";
   otob(a);
 }
