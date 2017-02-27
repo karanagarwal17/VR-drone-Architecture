@@ -75,14 +75,13 @@ void mnemonicToBinary(char a[]){
   a[i]='\0';
   FILE *fp,*fop,*fb;
   fp = fopen("MNEMONICS.txt","r");
-  fop = fopen("opcode.txt","a");
+  fop = fopen("opcode-table.txt","a");
   fseek(fop,0,SEEK_END);
   fb = fopen("binary.txt","a");
   fprintf(fop,"%-30s",t);
   fprintf(fop,"%-30s \t",a);
   while(1){
     fscanf(fp,"%[^-]",c);
-    fseek(fp,sizeof(char),SEEK_CUR);
     fscanf(fp,"%s\n",b);
     i=strlen(c);
     c[i]='\0';
@@ -232,7 +231,7 @@ void main(){
   FILE *file,*fop,*fb;
   char str[30];
   file = fopen("instruction.txt","r");
-  fop = fopen("opcode.txt","w");
+  fop = fopen("opcode-table.txt","w");
   fb = fopen("binary.txt","w");
   fclose(fop);
   fclose(fb);
