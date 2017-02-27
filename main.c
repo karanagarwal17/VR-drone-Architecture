@@ -75,8 +75,9 @@ void mnemonicToBinary(char a[]){
   a[i]='\0';
   FILE *fp,*fop,*fb;
   fp = fopen("MNEMONICS.txt","r");
-  fop = fopen("opcode.txt","a+");
-  fb = fopen("binary.txt","a+");
+  fop = fopen("opcode.txt","a");
+  fseek(fop,0,SEEK_END);
+  fb = fopen("binary.txt","a");
   fprintf(fop,"%-30s",t);
   fprintf(fop,"%-30s \t",a);
   while(1){
