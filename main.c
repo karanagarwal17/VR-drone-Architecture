@@ -42,20 +42,23 @@ int idstate(char a[],int i){
   }
 }
 
-void binary(FILE*f, int decimalno){
-  int d[20]={0};
-  int i=0;
-  while(decimalno>0){
-    d[i]=decimalno%2;
-    i++;
-    decimalno=decimalno/2;
+void binary(FILE *f, int decimalno){
+  char d[6] = "000000";
+  int i = 0;
+  if(decimalno <= 63){
+    while(decimalno > 0){
+      d[i] = decimalno%2 + '0';
+      i++;
+      decimalno = decimalno / 2;
+    }
+    fprintf(f,"%s",d);
   }
-  for(int j=5;j>=0;j--){
-    fprintf(f,"%d",d[j]);
+  else{
+    printf("The limit for the operands is 63, which has been exceeded ");
   }
 }
 
-void otob(char a[]){
+void mnemonicToBinary(char a[]){
   int n,i=0,x;
   char t[30],b[30],c[30];
   strcpy(t,a);
@@ -72,8 +75,8 @@ void otob(char a[]){
   a[i]='\0';
   FILE *fp,*fop,*fb;
   fp = fopen("MNEMONICS.txt","r");
-  fop = fopen("opcode.txt","a");
-  fb = fopen("binary.txt","a");
+  fop = fopen("opcode.txt","a+");
+  fb = fopen("binary.txt","a+");
   fprintf(fop,"%-30s",t);
   fprintf(fop,"%-30s \t",a);
   while(1){
@@ -218,20 +221,24 @@ void otob(char a[]){
     }break;
   }
   fprintf(fb,"\n");
+  fclose(fop);
+  fclose(fb);
+  fclose(fp);
 }
 
 void main(){
   int n;
   FILE *file,*fop,*fb;
-  char str[20];
+  char str[30];
   file = fopen("instruction.txt","r");
   fop = fopen("opcode.txt","w");
   fb = fopen("binary.txt","w");
   fclose(fop);
-  while(fgets(str,20,file)!=NULL){
+  fclose(fb);
+  while(fgets(str,30,file)!=NULL){
     n = strlen(str);
  	  str[n-1]='\0';
-    otob(str);
+    mnemonicToBinary(str);
   }
   fclose(file);
 }
