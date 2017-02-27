@@ -56,14 +56,13 @@ void binary(int decimalno)
     {
           printf("%d",d[j]);
     }
+
 }
 
 void otob(char a[]){
   int n,i=0,x;
   char t[30],b[30],c[30];
   strcpy(t,a);
-  //int k=strlen(t);
-  //t[k-1]='\0';
   while(a[i]!=' ' && a[i]!='\0'){
     i++;
   }
@@ -75,7 +74,6 @@ void otob(char a[]){
   a[i]='0'+n;
   i++;
   a[i]='\0';
-  printf("a");
   printf("%s\n",a);
   FILE *fp;
   fp = fopen("MNEMONICS.txt","r");
@@ -91,8 +89,7 @@ void otob(char a[]){
     if(feof(fp))
       break;
   }
-  printf("b");
-  printf("%s",b);
+  printf("%s\n",b);
   i=0;
   switch(n){
     case 0: break;
@@ -188,18 +185,14 @@ void otob(char a[]){
         x+=t[i]-'0';
         i++;
       }
-	printf("x=%d",x);
       binary(x);
-
       i+=2;
       x=0;
       while(t[i]!='\0'){
         x*=10;
         x+=t[i]-'0';
         i++;
-
       }
-	printf("x=%d",x);
       binary(x);
     }break;
     case 7: {
@@ -214,7 +207,6 @@ void otob(char a[]){
         i++;
       }
       binary(x);
-
       i+=2;
       x=0;
       while(t[i]!='\0'){
@@ -228,15 +220,14 @@ void otob(char a[]){
 }
 
 void main(){
-int n;
+  int n;
   FILE*file;
  char str[20];
  file=fopen("instr.txt","r");
  while(fgets(str,20,file)!=NULL){
-	n = strlen(str);
-	str[n-1]='\0';
-	printf("%s",str);
-      otob(str);
-}
+   n = strlen(str);
+ 	str[n-1]='\0';
+ 	printf("%s",str);
+      otob(str);}
  fclose(file);
 }
