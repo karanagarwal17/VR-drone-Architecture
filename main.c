@@ -42,21 +42,17 @@ int idstate(char a[],int i){
   }
 }
 
-void binary(int decimalno)
-{
-    int d[20]={0};
-    int i=0;
-    while(decimalno>0)
-    {
-         d[i]=decimalno%2;
-         i++;
-         decimalno=decimalno/2;
-    }
-    for(int j=5;j>=0;j--)
-    {
-          printf("%d",d[j]);
-    }
-
+void binary(FILE*f, int decimalno){
+  int d[20]={0};
+  int i=0;
+  while(decimalno>0){
+    d[i]=decimalno%2;
+    i++;
+    decimalno=decimalno/2;
+  }
+  for(int j=5;j>=0;j--){
+    fprintf(f,"%d",d[j]);
+  }
 }
 
 void otob(char a[]){
@@ -74,9 +70,12 @@ void otob(char a[]){
   a[i]='0'+n;
   i++;
   a[i]='\0';
-  printf("%s\n",a);
-  FILE *fp;
+  FILE *fp,*fop,*fb;
   fp = fopen("MNEMONICS.txt","r");
+  fop = fopen("opcode.txt","a");
+  fb = fopen("binary.txt","a");
+  fprintf(fop,"%-30s",t);
+  fprintf(fop,"%-30s \t",a);
   while(1){
     fscanf(fp,"%[^-]",c);
     fseek(fp,sizeof(char),SEEK_CUR);
@@ -89,7 +88,8 @@ void otob(char a[]){
     if(feof(fp))
       break;
   }
-  printf("%s\n",b);
+  fprintf(fb,"%s",b);
+  fprintf(fop,"%-30s\n",b);
   i=0;
   switch(n){
     case 0: break;
@@ -104,7 +104,7 @@ void otob(char a[]){
         x+=t[i]-'0';
         i++;
       }
-      binary(x);
+      binary(fb,x);
     }break;
     case 2: {
       while(t[i]!='@'){
@@ -117,7 +117,7 @@ void otob(char a[]){
         x+=t[i]-'0';
         i++;
       }
-      binary(x);
+      binary(fb,x);
     }break;
     case 3:{
       while(t[i]!='R'){
@@ -130,7 +130,7 @@ void otob(char a[]){
         x+=t[i]-'0';
         i++;
       }
-      binary(x);
+      binary(fb,x);
     }break;
     case 4: {
       while(t[i]!='#'){
@@ -143,7 +143,7 @@ void otob(char a[]){
         x+=t[i]-'0';
         i++;
       }
-      binary(x);
+      binary(fb,x);
       i+=2;
       x=0;
       while(t[i]!='\0'){
@@ -151,7 +151,7 @@ void otob(char a[]){
         x+=t[i]-'0';
         i++;
       }
-      binary(x);
+      binary(fb,x);
     }break;
     case 5: {
       while(t[i]!='@'){
@@ -164,7 +164,7 @@ void otob(char a[]){
         x+=t[i]-'0';
         i++;
       }
-      binary(x);
+      binary(fb,x);
       i+=3;
       x=0;
       while(t[i]!='\0'){
@@ -172,7 +172,7 @@ void otob(char a[]){
         x+=t[i]-'0';
         i++;
       }
-      binary(x);
+      binary(fb,x);
     }break;
     case 6: {
       while(t[i]!='R'){
@@ -185,7 +185,7 @@ void otob(char a[]){
         x+=t[i]-'0';
         i++;
       }
-      binary(x);
+      binary(fb,x);
       i+=2;
       x=0;
       while(t[i]!='\0'){
@@ -193,7 +193,7 @@ void otob(char a[]){
         x+=t[i]-'0';
         i++;
       }
-      binary(x);
+      binary(fb,x);
     }break;
     case 7: {
       while(t[i]!='#'){
@@ -206,7 +206,7 @@ void otob(char a[]){
         x+=t[i]-'0';
         i++;
       }
-      binary(x);
+      binary(fb,x);
       i+=2;
       x=0;
       while(t[i]!='\0'){
@@ -214,20 +214,24 @@ void otob(char a[]){
         x+=t[i]-'0';
         i++;
       }
-      binary(x);
+      binary(fb,x);
     }break;
   }
+  fprintf(fb,"\n");
 }
 
 void main(){
   int n;
-  FILE*file;
- char str[20];
- file=fopen("instr.txt","r");
- while(fgets(str,20,file)!=NULL){
-   n = strlen(str);
- 	str[n-1]='\0';
- 	printf("%s",str);
-      otob(str);}
- fclose(file);
+  FILE *file,*fop,*fb;
+  char str[20];
+  file = fopen("instruction.txt","r");
+  fop = fopen("opcode.txt","w");
+  fb = fopen("binary.txt","w");
+  fclose(fop);
+  while(fgets(str,20,file)!=NULL){
+    n = strlen(str);
+ 	  str[n-1]='\0';
+    otob(str);
+  }
+  fclose(file);
 }
