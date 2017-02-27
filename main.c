@@ -220,10 +220,14 @@ void otob(char a[]){
 }
 
 void main(){
+  int n;
   FILE*file;
  char str[20];
  file=fopen("instr.txt","r");
  while(fgets(str,20,file)!=NULL){
+   n = strlen(str);
+ 	str[n-1]='\0';
+ 	printf("%s",str);
       otob(str);}
  fclose(file);
 }
