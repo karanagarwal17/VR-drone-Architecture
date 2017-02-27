@@ -42,7 +42,20 @@ int idstate(char a[],int i){
   }
 }
 
-void binary(int x){
+void binary(int decimalno)
+{
+    int d[20]={0};
+    int i=0;
+    while(decimalno>0)
+    {
+         d[i]=decimalno%2;
+         i++;
+         decimalno=decimalno/2;
+    }
+    for(int j=5;j>=0;j--)
+    {
+          printf("%d",d[j]);
+    }
 
 }
 
@@ -207,6 +220,10 @@ void otob(char a[]){
 }
 
 void main(){
-  char a[30] = "MOV #87,R65";
-  otob(a);
+  FILE*file;
+ char str[20];
+ file=fopen("instr.txt","r");
+ while(fgets(str,20,file)!=NULL){
+      otob(str);}
+ fclose(file);
 }
