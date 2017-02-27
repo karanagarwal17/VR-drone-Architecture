@@ -226,7 +226,7 @@ void main(){
  file=fopen("instr.txt","r");
  while(fgets(str,20,file)!=NULL){
    n = strlen(str);
- 	str[n-1]='\0';
+ 	 str[n-1]='\0';
  	printf("%s",str);
       otob(str);}
  fclose(file);
