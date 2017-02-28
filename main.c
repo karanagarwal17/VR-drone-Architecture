@@ -50,11 +50,11 @@ int idstate(char a[],int i){
 // function to convert decimal to binary
 void binary(FILE *f, int decimalno){
   char d[6] = "000000";
-  int i = 0;
+  int i = 5;
   if(decimalno <= 63){
     while(decimalno > 0){
       d[i] = decimalno%2 + '0';
-      i++;
+      i--;
       decimalno = decimalno / 2;
     }
     // printing to the binary.txt file
