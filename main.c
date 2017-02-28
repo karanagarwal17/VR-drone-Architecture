@@ -1,10 +1,13 @@
 #include<stdio.h>
 #include<string.h>
 
+// function to determine the state of the instructions
 int idstate(char a[],int i){
+  // case for state 0
   if(a[i]=='\0'){
     return 0;
   }
+  // case where the first operand is immidiate
   else if(a[i]=='#'){
     while(a[i]!='\0'){
       if(a[i]==','){
@@ -17,6 +20,7 @@ int idstate(char a[],int i){
     }
     return 1;
   }
+  // case where the first operand is register
   else if(a[i]=='R'){
     while(a[i]!='\0'){
       if(a[i]==','){
@@ -27,6 +31,7 @@ int idstate(char a[],int i){
     }
     return 3;
   }
+  // case where the first operand is indirect
   else if(a[i]=='@'){
     while(a[i]!='\0'){
       if(a[i]==','){
@@ -42,6 +47,7 @@ int idstate(char a[],int i){
   }
 }
 
+// function to convert decimal to binary
 void binary(FILE *f, int decimalno){
   char d[6] = "000000";
   int i = 0;
@@ -51,6 +57,7 @@ void binary(FILE *f, int decimalno){
       i++;
       decimalno = decimalno / 2;
     }
+    // printing to the binary.txt file
     fprintf(f,"%s",d);
   }
   else{
@@ -58,14 +65,17 @@ void binary(FILE *f, int decimalno){
   }
 }
 
+// function to convert the instruction to binary code
 void mnemonicToBinary(char a[]){
   int n,i=0,x;
   char t[30],b[30],c[30];
   strcpy(t,a);
+  // finding the opcode
   while(a[i]!=' ' && a[i]!='\0'){
     i++;
   }
   i++;
+  // getting the state
   n = idstate(a,i);
   i--;
   a[i]=',';
@@ -76,12 +86,13 @@ void mnemonicToBinary(char a[]){
   FILE *fp,*fop,*fb;
   fp = fopen("MNEMONICS.txt","r");
   fop = fopen("opcode-table.txt","a");
-  fseek(fop,0,SEEK_END);
   fb = fopen("binary.txt","a");
   fprintf(fop,"%-30s",t);
   fprintf(fop,"%-30s \t",a);
+  // searching for the binary corresponding to the opcode from the MNEMONICS.txt
   while(1){
     fscanf(fp,"%[^-]",c);
+    fseek(fp,sizeof(char),SEEK_CUR);
     fscanf(fp,"%s\n",b);
     i=strlen(c);
     c[i]='\0';
@@ -94,6 +105,7 @@ void mnemonicToBinary(char a[]){
   fprintf(fb,"%s",b);
   fprintf(fop,"%-30s\n",b);
   i=0;
+  // cases according to the states, where the operands are converted to binary
   switch(n){
     case 0: break;
     case 1: {
@@ -231,10 +243,12 @@ void main(){
   FILE *file,*fop,*fb;
   char str[30];
   file = fopen("instruction.txt","r");
+  // opening and closing opcode and binary files to empty them
   fop = fopen("opcode-table.txt","w");
   fb = fopen("binary.txt","w");
   fclose(fop);
   fclose(fb);
+  //reading the instructions file and getting the instructions one by one
   while(fgets(str,30,file)!=NULL){
     n = strlen(str);
  	  str[n-1]='\0';
