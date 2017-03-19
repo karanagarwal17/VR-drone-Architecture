@@ -1,11 +1,11 @@
 #include<stdio.h>
 #include"compiler.h"
 
-binarytodecimal(){
-
+int binarytodecimal(){
+  return 0;
 }
 
-decode(char *a){
+void decode(char *a){
   char b1[4],b2[6],b3[6];
   int i,x1,x2,x3;
   for(i=0;i<4;i++){
@@ -58,14 +58,25 @@ decode(char *a){
       case 6: FP(x2,x3,4);break;
       case 7: FP(x2,x3,5);break;
       case 8: FP(x2,x3,6);break;
-      case 9: STR(x2,x3,4);break;
-      case 10: STR(x2,x3,7);break;
-      case 11: LDB(x2,x3,6);break;
-      case 12: LDB(x2,x3,7);break;
+      case 9: MVR(x2,x3,7);break;
+      case 10: STR(x2,x3,4);break;
+      case 11: STR(x2,x3,7);break;
+      case 12: LDB(x2,x3,6);break;
+      case 13: LDB(x2,x3,7);break;
     }
   }
 }
 
-main(){
-
+void main(){
+  int n;
+  FILE *file;
+  char str[30];
+  file = fopen("binary.txt","r");
+  //reading the instructions file and getting the instructions one by one
+  while(fgets(str,30,file)!=NULL){
+    n = strlen(str);
+    str[n-1]='\0';
+    decode(str);
+  }
+  fclose(file);
 }
