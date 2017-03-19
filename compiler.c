@@ -1,5 +1,5 @@
 #include<stdio.h>
-
+#include"compiler.h"
 
 binarytodecimal(){
 
@@ -21,6 +21,31 @@ decode(char *a){
   x2 = binarytodecimal(b2);
   x3 = binarytodecimal(b3);
   if(x1 == 15){
+    if(x2 == 63){
+      switch(x3){
+        case 0: TAKE();break;
+        case 1: LAND();break;
+        case 2: ILU();break;
+        case 3: SPK();break;
+        case 4: BINF();break;
+      }
+    }
+    else{
+      switch(x2){
+        case 0: PRO(x3,1);break;
+        case 1: PRO(x3,2);break;
+        case 2: PRO(x3,3);break;
+        case 3: SPD(x3,1);break;
+        case 4: SPD(x3,2);break;
+        case 5: SPD(x3,3);break;
+        case 6: GES(x3,1);break;
+        case 7: GES(x3,2);break;
+        case 8: GES(x3,3);break;
+        case 9: REST(x3,1);break;
+        case 10: REST(x3,2);break;
+        case 11: REST(x3,3);break;
+      }
+    }
   }
   else{
     switch(x1){
