@@ -21,13 +21,13 @@ FILE *out;
 void output();
 
 void TAKE(){
-	if (battery==100 && power = 0) {
+	if (battery==100 && power == 0) {
 		fprintf(out,"Drone is taking off\n");
 		battery--;
 		output();
     power = 1;
 	}
-	else if(batter != 100){
+	else if(battery != 100){
 		fprintf(out,"need 100%% battery for take off\n");
 		output();
 	}
