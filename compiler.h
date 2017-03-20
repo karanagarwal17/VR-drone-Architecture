@@ -3,6 +3,7 @@
 #include<math.h>
 
 int obstacle[5][2]={0};
+int power = 0;
 int current_x = 0;
 int current_y = 0;
 int battery = 100;
@@ -20,25 +21,35 @@ FILE *out;
 void output();
 
 void TAKE(){
-	if (battery==100) {
+	if (battery==100 && power = 0) {
 		fprintf(out,"Drone is taking off\n");
 		battery--;
 		output();
+    power = 1;
 	}
-	else{
+	else if(batter != 100){
 		fprintf(out,"need 100%% battery for take off\n");
 		output();
 	}
+  else{
+    fprintf(out, "The drone is already in the air.\n");
+  }
 }
 
 void LAND(){
-	fprintf(out,"The drone has landed\n");
-	current_x = 0;
-	current_y = 0;
-	speaker = 0;
-	light = 0;
-	battery -= 1;
-  output();
+  if(power == 1){
+	 fprintf(out,"The drone has landed\n");
+  	current_x = 0;
+  	current_y = 0;
+  	speaker = 0;
+  	light = 0;
+  	battery -= 1;
+    power = 0;
+    output();
+  }
+  else{
+    fprintf(out, "The drone was already on the land\n");
+  }
 }
 
 void ILU(){
@@ -132,7 +143,7 @@ void SPD(int x, int s){
 }
 
 void BINF(){
-	fprintf(out,"The battery remaining in the drone is %d\n",battery);
+	fprintf(out,"The battery remaining in the drone is %d%%\n",battery);
 	battery -= 1;
   output();
 }
@@ -225,8 +236,8 @@ void MOV(int x, int y, int s){
 	}
 	if(j!=1) {
 		fprintf(out,"No obstacle in the path\n");
-		fprintf(out,"Taking the path having equation:y=%d(x-%d)+%d\n",(int)m,current_x,current_y);
-		fprintf(out,"Distance covered=%.2f\n",d);
+		fprintf(out,"Taking the path having equation:y = %d(x - %d) + %d\n",(int)m,current_x,current_y);
+		fprintf(out,"Distance covered= %.2f units\n",d);
 	}
 	fprintf(out,"Drone has moved from (%d,%d) to (%d,%d)\n",current_x,current_y,x,y);
 	current_x = x;
@@ -264,8 +275,8 @@ void FP(int x, int y, int s){
 	switch(s){
   	case 4: break;
   	case 5:{
-      x=memory[x];
-  		y=memory[y];
+      x=memory[registers[x]];
+  		y=memory[registers[y]];
     }break;
   	case 6:{
       y=registers[y];

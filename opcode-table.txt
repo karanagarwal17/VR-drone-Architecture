@@ -5,7 +5,7 @@ MVR #5,R4                     MVR,7                          	1001
 PRO #5                        PRO,1                          	1111000000                    
 SPD #10                       SPD,1                          	1111000011                    
 OBS #3,#6                     OBS,4                          	0011                          
-MOV #6,R12                    MOV,7                          	1101                          
+MOV #6,#6                     MOV,4                          	0000                          
 MVR #7,R7                     MVR,7                          	1001                          
 MVR #9,R8                     MVR,7                          	1001                          
 STR #5,#5                     STR,4                          	1010                          

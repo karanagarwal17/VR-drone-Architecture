@@ -67,8 +67,8 @@ IR               :  1001000101000010
 ----------------------------------------------------------------------
 
 No obstacle in the path
-Taking the path having equation:y=1(x-0)+0
-Distance covered=7.81
+Taking the path having equation:y = 1(x - 0) + 0
+Distance covered= 7.81 units
 Drone has moved from (0,0) to (5,6)
 
 ***************************************
@@ -239,16 +239,18 @@ IR               :  0011000011000110
 
 ----------------------------------------------------------------------
 
-The value at memory location at registers 6 has been stored in registers 12
+Obstacle (3,6) in the path
+Taking alternate path
+Drone has moved from (5,6) to (6,6)
 
 ***************************************
-Battery          :  93 %
+Battery          :  92 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  8
 MAR              :  8
-MDR              :  1101000110001100
-IR               :  1101000110001100
+MDR              :  0000000110000110
+IR               :  0000000110000110
 
 ***************************************
 
@@ -276,7 +278,7 @@ IR               :  1101000110001100
 The value 7 has been stored in registers 7
 
 ***************************************
-Battery          :  92 %
+Battery          :  91 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  9
@@ -310,7 +312,7 @@ IR               :  1001000111000111
 The value 9 has been stored in registers 8
 
 ***************************************
-Battery          :  91 %
+Battery          :  90 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  10
@@ -344,7 +346,7 @@ IR               :  1001001001001000
 The value 5 has been stored at memory location 5
 
 ***************************************
-Battery          :  91 %
+Battery          :  90 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  11
@@ -378,7 +380,7 @@ IR               :  1010000101000101
 The value 6 has been stored at memory location 7
 
 ***************************************
-Battery          :  91 %
+Battery          :  90 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  12
@@ -412,7 +414,7 @@ IR               :  1010000110000111
 The value 7 has been stored at memory location 9
 
 ***************************************
-Battery          :  91 %
+Battery          :  90 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  13
@@ -446,7 +448,7 @@ IR               :  1010000111001001
 PROJECTING THE SHEILD
 
 ***************************************
-Battery          :  90 %
+Battery          :  89 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  14
@@ -477,10 +479,10 @@ IR               :  1111000001000100
 
 ----------------------------------------------------------------------
 
-Drone will follow the player from the location (5,6) to the location (6,0)
+Drone will follow the player from the location (6,6) to the location (6,7)
 
 ***************************************
-Battery          :  89 %
+Battery          :  88 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  15
@@ -511,10 +513,10 @@ IR               :  0111000111001000
 
 ----------------------------------------------------------------------
 
-The battery remaining in the drone is 89
+The battery remaining in the drone is 88
 
 ***************************************
-Battery          :  88 %
+Battery          :  87 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  16
@@ -548,7 +550,7 @@ IR               :  1111111111000100
 need 100% battery for take off
 
 ***************************************
-Battery          :  88 %
+Battery          :  87 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  17
@@ -582,7 +584,7 @@ IR               :  1111111111000000
 The value 2 has been stored in registers 2
 
 ***************************************
-Battery          :  87 %
+Battery          :  86 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  18
@@ -616,7 +618,7 @@ IR               :  1001000010000010
 The gesture corresponding to id number 2 is: MISSILE
 
 ***************************************
-Battery          :  86 %
+Battery          :  85 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  19
@@ -650,7 +652,7 @@ IR               :  1111001000000010
 The drone has landed
 
 ***************************************
-Battery          :  85 %
+Battery          :  84 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  20
@@ -684,7 +686,7 @@ IR               :  1111111111000001
 The drone has been illuminated
 
 ***************************************
-Battery          :  84 %
+Battery          :  83 %
 Speaker status   :  0
 Torch status     :  1
 Program Counter  :  21
@@ -718,7 +720,7 @@ IR               :  1111111111000010
 The speaker has been turned on
 
 ***************************************
-Battery          :  83 %
+Battery          :  82 %
 Speaker status   :  1
 Torch status     :  1
 Program Counter  :  22
