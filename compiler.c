@@ -1,8 +1,18 @@
 #include<stdio.h>
 #include"compiler.h"
-
-int binarytodecimal(){
-  return 0;
+#include<math.h>
+#include<string.h>
+int binarytodecimal(char* str){
+  int n = 0;
+  int size = strlen(str) - 1;
+  int count = 0;
+  while ( *str != '\0' ) {
+   if ( *str == '1' )
+       n = n + pow(2, size - count );
+   count++;
+   str++;
+  }
+  return n;
 }
 
 void decode(char *a){
