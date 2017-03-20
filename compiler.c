@@ -17,7 +17,7 @@ int binarytodecimal(char* str){
 }
 
 void decode(char *a){
-	char b1[4],b2[6],b3[6];
+	char b1[5],b2[7],b3[7];
 	int i,x1,x2,x3;
 	for(i=0; i<4; i++) {
 		b1[i]=a[i];
@@ -28,9 +28,13 @@ void decode(char *a){
 	for(i=0; i<6; i++) {
 		b3[i]=a[i+10];
 	}
+  b1[4] = '\0';
+  b2[6] = '\0';
+  b3[6] = '\0';
 	x1 = binarytodecimal(b1);
 	x2 = binarytodecimal(b2);
 	x3 = binarytodecimal(b3);
+  //fprintf(out,"x1 = %d, x2 = %d, x3 = %d\n",x1,x2,x3);
 	if(x1 == 15) {
 		if(x2 == 63) {
 			switch(x3) {
@@ -83,16 +87,19 @@ void main(){
 	FILE *file;
 	char str[30];
 	file = fopen("binary.txt","r");
+  out = fopen("output.txt","w+");
 	//reading the instructions file and getting the instructions one by one
 	while(fgets(str,30,file)!=NULL) {
 		n = strlen(str);
 		str[n-1]='\0';
-    printf("%s\n",str);
     PC++;
     MAR++;
     strcpy(MDR,str);
     strcpy(IR,str);
+    //fprintf(out,"%s\n",str);
 		decode(str);
+    //fprintf(out, "Take - %d\n",PC);
 	}
 	fclose(file);
+  fclose(out);
 }
