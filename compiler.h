@@ -40,6 +40,7 @@ void TAKE(){
   else{
 		fprintf(out,"ALU signal for subtact is generated.\n");
     fprintf(out, "The drone is already in the air.\n");
+		output();
   }
 }
 
@@ -53,15 +54,15 @@ void LAND(){
   	current_y = 0;
   	speaker = 0;
   	light = 0;
-  	battery -= 1;
     power = 0;
-    output();
   }
   else{
 		flag[1]=0;
 		fprintf(out,"ALU signal for subtact is generated.\n");
     fprintf(out, "The drone was already on the land\n");
   }
+	battery -= 1;
+	output();
 }
 
 void ILU(){
@@ -114,8 +115,9 @@ void LDB(int x2, int x3, int s){
 	}
 	if(s == 7) {
 		registers[x3] = memory[x2];
-		fprintf(out,"The value at memory location at register %d has been stored in register %d\n",x2,x3);
+		fprintf(out,"The value at memory location %d has been stored in register %d\n",x2,x3);
 	}
+	battery -= 1;
   output();
 }
 
@@ -129,6 +131,7 @@ void STR(int x2, int x3, int s){
 		memory[registers[x3]] = x2;
 		fprintf(out,"The value %d has been stored at address given by register %d\n",x2,x3);
 	}
+	battery -= 1;
   output();
 }
 
@@ -142,6 +145,7 @@ void REST(int t,int s){
 	}
 	fprintf(out,"Now, the drone will rest\n");
 	sleep(t);
+	battery -= 1;
   output();
 }
 

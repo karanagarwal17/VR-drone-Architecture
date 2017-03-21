@@ -12,6 +12,7 @@ MVR #9,R8
 STR #5,#5
 STR #6,#7
 STR #7,#9
+REST #5
 PRO @R4
 FP @R7,@R8
 BINF

@@ -35,7 +35,6 @@ ALU flag status  :Z=1 	 N=0
 
 ----------------------------------------------------------------------
 
-Move_to_register() has been called.
 
 The value 5 has been stored in register 2
 
@@ -112,9 +111,7 @@ ALU flag status  :Z=0 	 N=1
 
 ----------------------------------------------------------------------
 
-Move_to_register() has been called.
 
-The value 5 has been stored in register 4
 
 ***************************************
 Battery          :  96 %
@@ -300,9 +297,7 @@ ALU flag status  :Z=1 	 N=1
 
 ----------------------------------------------------------------------
 
-Move_to_register() has been called.
 
-The value 7 has been stored in register 7
 
 ***************************************
 Battery          :  91 %
@@ -337,9 +332,7 @@ ALU flag status  :Z=0 	 N=0
 
 ----------------------------------------------------------------------
 
-Move_to_register() has been called.
 
-The value 9 has been stored in register 8
 
 ***************************************
 Battery          :  90 %
@@ -379,7 +372,7 @@ Store_in_memory() function has been called.
 The value 5 has been stored at memory location 5
 
 ***************************************
-Battery          :  90 %
+Battery          :  89 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  11
@@ -416,7 +409,7 @@ Store_in_memory() function has been called.
 The value 6 has been stored at memory location 7
 
 ***************************************
-Battery          :  90 %
+Battery          :  88 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  12
@@ -453,7 +446,7 @@ Store_in_memory() function has been called.
 The value 7 has been stored at memory location 9
 
 ***************************************
-Battery          :  90 %
+Battery          :  87 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  13
@@ -485,16 +478,47 @@ ALU flag status  :Z=0 	 N=0
 
 ----------------------------------------------------------------------
 
-Project() function has been called.
-
-PROJECTING THE SHEILD
 
 ***************************************
-Battery          :  89 %
+Battery          :  86 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  14
 MAR              :  14
+MDR              :  1111001001000101
+IR               :  1111001001000101
+
+***************************************
+
+***********************
+| R00        | 00000  |
+| R01        | 00000  |
+| R02        | 00005  |
+| R03        | 00000  |
+| R04        | 00005  |
+| R05        | 00000  |
+| R06        | 00000  |
+| R07        | 00007  |
+| R08        | 00009  |
+| R09        | 00000  |
+| R10        | 00000  |
+| R11        | 00000  |
+| R12        | 00000  |
+| R13        | 00000  |
+| R14        | 00000  |
+| R15        | 00000  |
+***********************
+
+----------------------------------------------------------------------
+
+PROJECTING THE SHEILD
+
+***************************************
+Battery          :  85 %
+Speaker status   :  0
+Torch status     :  0
+Program Counter  :  15
+MAR              :  15
 MDR              :  1111000001000100
 IR               :  1111000001000100
 ALU flag status  :Z=0 	 N=0
@@ -527,11 +551,11 @@ Follow_player() function has been called.
 Drone will follow the player from the location (6,6) to the location (6,7)
 
 ***************************************
-Battery          :  88 %
+Battery          :  84 %
 Speaker status   :  0
 Torch status     :  0
-Program Counter  :  15
-MAR              :  15
+Program Counter  :  16
+MAR              :  16
 MDR              :  0111000111001000
 IR               :  0111000111001000
 ALU flag status  :Z=0 	 N=0
@@ -559,16 +583,14 @@ ALU flag status  :Z=0 	 N=0
 
 ----------------------------------------------------------------------
 
-Battery_info() function has been called.
 
-The battery remaining in the drone is 88%
 
 ***************************************
-Battery          :  87 %
+Battery          :  83 %
 Speaker status   :  0
 Torch status     :  0
-Program Counter  :  16
-MAR              :  16
+Program Counter  :  17
+MAR              :  17
 MDR              :  1111111111000100
 IR               :  1111111111000100
 ALU flag status  :Z=0 	 N=0
@@ -602,11 +624,11 @@ ALU signal for subtact is generated.
 need 100% battery for take off
 
 ***************************************
-Battery          :  87 %
+Battery          :  83 %
 Speaker status   :  0
 Torch status     :  0
-Program Counter  :  17
-MAR              :  17
+Program Counter  :  18
+MAR              :  18
 MDR              :  1111111111000000
 IR               :  1111111111000000
 ALU flag status  :Z=0 	 N=1
@@ -634,16 +656,15 @@ ALU flag status  :Z=0 	 N=1
 
 ----------------------------------------------------------------------
 
-Move_to_register() has been called.
 
 The value 2 has been stored in register 2
 
 ***************************************
-Battery          :  86 %
+Battery          :  82 %
 Speaker status   :  0
 Torch status     :  0
-Program Counter  :  18
-MAR              :  18
+Program Counter  :  19
+MAR              :  19
 MDR              :  1001000010000010
 IR               :  1001000010000010
 ALU flag status  :Z=0 	 N=0
@@ -676,11 +697,11 @@ Gesture() function has been called.
 The gesture corresponding to id number 2 is: MISSILE
 
 ***************************************
-Battery          :  85 %
+Battery          :  81 %
 Speaker status   :  0
 Torch status     :  0
-Program Counter  :  19
-MAR              :  19
+Program Counter  :  20
+MAR              :  20
 MDR              :  1111001000000010
 IR               :  1111001000000010
 ALU flag status  :Z=0 	 N=0
@@ -712,17 +733,48 @@ LAND() function has been called.
 
 ALU signal for subtact is generated.
 The drone was already on the land
-Illuminate() function has been called
 
-ALU signal for subtact is generated.
+
+***************************************
+Battery          :  80 %
+Speaker status   :  0
+Torch status     :  0
+Program Counter  :  21
+MAR              :  21
+MDR              :  1111111111000001
+IR               :  1111111111000001
+
+***************************************
+
+***********************
+| R00        | 00000  |
+| R01        | 00000  |
+| R02        | 00002  |
+| R03        | 00000  |
+| R04        | 00005  |
+| R05        | 00000  |
+| R06        | 00000  |
+| R07        | 00007  |
+| R08        | 00009  |
+| R09        | 00000  |
+| R10        | 00000  |
+| R11        | 00000  |
+| R12        | 00000  |
+| R13        | 00000  |
+| R14        | 00000  |
+| R15        | 00000  |
+***********************
+
+----------------------------------------------------------------------
+
 The drone has been illuminated
 
 ***************************************
-Battery          :  84 %
+Battery          :  79 %
 Speaker status   :  0
 Torch status     :  1
-Program Counter  :  21
-MAR              :  21
+Program Counter  :  22
+MAR              :  22
 MDR              :  1111111111000010
 IR               :  1111111111000010
 ALU flag status  :Z=0 	 N=1
@@ -756,11 +808,11 @@ ALU signal for subtact is generated.
 The speaker has been turned on
 
 ***************************************
-Battery          :  83 %
+Battery          :  78 %
 Speaker status   :  1
 Torch status     :  1
-Program Counter  :  22
-MAR              :  22
+Program Counter  :  23
+MAR              :  23
 MDR              :  1111111111000011
 IR               :  1111111111000011
 ALU flag status  :Z=0 	 N=1

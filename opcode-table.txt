@@ -11,6 +11,7 @@ MVR #9,R8                     MVR,7                          	1001
 STR #5,#5                     STR,4                          	1010                          
 STR #6,#7                     STR,4                          	1010                          
 STR #7,#9                     STR,4                          	1010                          
+REST #5                       REST,1                         	1111001001                    
 PRO @R4                       PRO,2                          	1111000001                    
 FP @R7,@R8                    FP,5                           	0111                          
 BINF                          BINF,0                         	1111111111000100              
