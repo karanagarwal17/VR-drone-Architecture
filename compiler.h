@@ -7,8 +7,8 @@ int power = 0;
 int current_x = 0;
 int current_y = 0;
 int battery = 100;
-int light = 0;
 int PC=0;
+int light = 0;
 int MAR=0;
 char MDR[17] = {0};
 char IR[17] = {0};
@@ -21,13 +21,13 @@ FILE *out;
 void output();
 
 void TAKE(){
-	if (battery==100 && power = 0) {
+	if (battery==100 && power == 0) {
 		fprintf(out,"Drone is taking off\n");
 		battery--;
 		output();
     power = 1;
 	}
-	else if(batter != 100){
+	else if(battery != 100){
 		fprintf(out,"need 100%% battery for take off\n");
 		output();
 	}
@@ -204,8 +204,8 @@ void MOV(int x, int y, int s){
 	switch(s) {
   	case 4: break;
   	case 5: {
-      x=memory[x];
-  		y=memory[y];
+      x=memory[registers[x]];
+  		y=memory[registers[y]];
     }break;
   	case 6: {
       y=registers[y];
@@ -251,8 +251,8 @@ void OBS(int x, int y, int s){
 	switch(s) {
 	case 4:break;
 	case 5:{
-    x=memory[x];
-		y=memory[y];
+    x=memory[registers[x]];
+		y=memory[registers[y]];
   }break;
 	case 6:{
     y=registers[y];
