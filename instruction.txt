@@ -2,6 +2,7 @@ OBS #3,#6
 MVR #5,R2
 MOV #5,#6
 MVR #5,R4
+TAKE
 PRO #5
 SPD #10
 OBS #3,#6
@@ -14,7 +15,6 @@ STR #7,#9
 PRO @R4
 FP @R7,@R8
 BINF
-TAKE
 MVR #2,R2
 GES R2
 LAND
