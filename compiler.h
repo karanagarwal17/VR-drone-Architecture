@@ -33,6 +33,7 @@ void TAKE(){
 	}
   else{
     fprintf(out, "The drone is already in the air.\n");
+		output();
   }
 }
 
@@ -43,13 +44,13 @@ void LAND(){
   	current_y = 0;
   	speaker = 0;
   	light = 0;
-  	battery -= 1;
     power = 0;
-    output();
   }
   else{
     fprintf(out, "The drone was already on the land\n");
   }
+	battery -= 1;
+	output();
 }
 
 void ILU(){
@@ -80,7 +81,7 @@ void SPK(){
 
 void MVR(int x2, int x3, int s){
 	registers[x3] = x2;
-	fprintf(out,"The value %d has been stored in registers %d\n",x2,x3);
+	fprintf(out,"The value %d has been stored in register %d\n",x2,x3);
   battery -= 1;
   output();
 }
@@ -88,12 +89,13 @@ void MVR(int x2, int x3, int s){
 void LDB(int x2, int x3, int s){
 	if(s == 6) {
 		registers[x3] = memory[registers[x2]];
-		fprintf(out,"The value at memory location at registers %d has been stored in registers %d\n",x2,x3);
+		fprintf(out,"The value at memory location at register %d has been stored in register %d\n",x2,x3);
 	}
 	if(s == 7) {
 		registers[x3] = memory[x2];
-		fprintf(out,"The value at memory location at registers %d has been stored in registers %d\n",x2,x3);
+		fprintf(out,"The value at memory location %d has been stored in register %d\n",x2,x3);
 	}
+	battery -= 1;
   output();
 }
 
@@ -104,8 +106,9 @@ void STR(int x2, int x3, int s){
 	}
 	if(s == 7) {
 		memory[registers[x3]] = x2;
-		fprintf(out,"The value %d has been stored at address given by registers %d\n",x2,x3);
+		fprintf(out,"The value %d has been stored at address given by register %d\n",x2,x3);
 	}
+	battery -= 1;
   output();
 }
 
@@ -118,6 +121,7 @@ void REST(int t,int s){
 	}
 	fprintf(out,"Now, the drone will rest\n");
 	sleep(t);
+	battery -= 1;
   output();
 }
 

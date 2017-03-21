@@ -32,7 +32,7 @@ IR               :  0011000011000110
 
 ----------------------------------------------------------------------
 
-The value 5 has been stored in registers 2
+The value 5 has been stored in register 2
 
 ***************************************
 Battery          :  98 %
@@ -103,7 +103,7 @@ IR               :  0000000101000110
 
 ----------------------------------------------------------------------
 
-The value 5 has been stored in registers 4
+The value 5 has been stored in register 4
 
 ***************************************
 Battery          :  96 %
@@ -275,7 +275,7 @@ IR               :  0000000110000110
 
 ----------------------------------------------------------------------
 
-The value 7 has been stored in registers 7
+The value 7 has been stored in register 7
 
 ***************************************
 Battery          :  91 %
@@ -309,7 +309,7 @@ IR               :  1001000111000111
 
 ----------------------------------------------------------------------
 
-The value 9 has been stored in registers 8
+The value 9 has been stored in register 8
 
 ***************************************
 Battery          :  90 %
@@ -346,7 +346,7 @@ IR               :  1001001001001000
 The value 5 has been stored at memory location 5
 
 ***************************************
-Battery          :  90 %
+Battery          :  89 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  11
@@ -380,7 +380,7 @@ IR               :  1010000101000101
 The value 6 has been stored at memory location 7
 
 ***************************************
-Battery          :  90 %
+Battery          :  88 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  12
@@ -414,7 +414,7 @@ IR               :  1010000110000111
 The value 7 has been stored at memory location 9
 
 ***************************************
-Battery          :  90 %
+Battery          :  87 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  13
@@ -445,14 +445,48 @@ IR               :  1010000111001001
 
 ----------------------------------------------------------------------
 
-PROJECTING THE SHEILD
+Now, the drone will rest
 
 ***************************************
-Battery          :  89 %
+Battery          :  86 %
 Speaker status   :  0
 Torch status     :  0
 Program Counter  :  14
 MAR              :  14
+MDR              :  1111001001000101
+IR               :  1111001001000101
+
+***************************************
+
+***********************
+| R00        | 00000  |
+| R01        | 00000  |
+| R02        | 00005  |
+| R03        | 00000  |
+| R04        | 00005  |
+| R05        | 00000  |
+| R06        | 00000  |
+| R07        | 00007  |
+| R08        | 00009  |
+| R09        | 00000  |
+| R10        | 00000  |
+| R11        | 00000  |
+| R12        | 00000  |
+| R13        | 00000  |
+| R14        | 00000  |
+| R15        | 00000  |
+***********************
+
+----------------------------------------------------------------------
+
+PROJECTING THE SHEILD
+
+***************************************
+Battery          :  85 %
+Speaker status   :  0
+Torch status     :  0
+Program Counter  :  15
+MAR              :  15
 MDR              :  1111000001000100
 IR               :  1111000001000100
 
@@ -482,11 +516,11 @@ IR               :  1111000001000100
 Drone will follow the player from the location (6,6) to the location (6,7)
 
 ***************************************
-Battery          :  88 %
+Battery          :  84 %
 Speaker status   :  0
 Torch status     :  0
-Program Counter  :  15
-MAR              :  15
+Program Counter  :  16
+MAR              :  16
 MDR              :  0111000111001000
 IR               :  0111000111001000
 
@@ -513,14 +547,14 @@ IR               :  0111000111001000
 
 ----------------------------------------------------------------------
 
-The battery remaining in the drone is 88%
+The battery remaining in the drone is 84%
 
 ***************************************
-Battery          :  87 %
+Battery          :  83 %
 Speaker status   :  0
 Torch status     :  0
-Program Counter  :  16
-MAR              :  16
+Program Counter  :  17
+MAR              :  17
 MDR              :  1111111111000100
 IR               :  1111111111000100
 
@@ -550,11 +584,11 @@ IR               :  1111111111000100
 need 100% battery for take off
 
 ***************************************
-Battery          :  87 %
+Battery          :  83 %
 Speaker status   :  0
 Torch status     :  0
-Program Counter  :  17
-MAR              :  17
+Program Counter  :  18
+MAR              :  18
 MDR              :  1111111111000000
 IR               :  1111111111000000
 
@@ -581,14 +615,14 @@ IR               :  1111111111000000
 
 ----------------------------------------------------------------------
 
-The value 2 has been stored in registers 2
+The value 2 has been stored in register 2
 
 ***************************************
-Battery          :  86 %
+Battery          :  82 %
 Speaker status   :  0
 Torch status     :  0
-Program Counter  :  18
-MAR              :  18
+Program Counter  :  19
+MAR              :  19
 MDR              :  1001000010000010
 IR               :  1001000010000010
 
@@ -618,11 +652,11 @@ IR               :  1001000010000010
 The gesture corresponding to id number 2 is: MISSILE
 
 ***************************************
-Battery          :  85 %
+Battery          :  81 %
 Speaker status   :  0
 Torch status     :  0
-Program Counter  :  19
-MAR              :  19
+Program Counter  :  20
+MAR              :  20
 MDR              :  1111001000000010
 IR               :  1111001000000010
 
@@ -650,14 +684,47 @@ IR               :  1111001000000010
 ----------------------------------------------------------------------
 
 The drone was already on the land
+
+***************************************
+Battery          :  80 %
+Speaker status   :  0
+Torch status     :  0
+Program Counter  :  21
+MAR              :  21
+MDR              :  1111111111000001
+IR               :  1111111111000001
+
+***************************************
+
+***********************
+| R00        | 00000  |
+| R01        | 00000  |
+| R02        | 00002  |
+| R03        | 00000  |
+| R04        | 00005  |
+| R05        | 00000  |
+| R06        | 00000  |
+| R07        | 00007  |
+| R08        | 00009  |
+| R09        | 00000  |
+| R10        | 00000  |
+| R11        | 00000  |
+| R12        | 00000  |
+| R13        | 00000  |
+| R14        | 00000  |
+| R15        | 00000  |
+***********************
+
+----------------------------------------------------------------------
+
 The drone has been illuminated
 
 ***************************************
-Battery          :  84 %
+Battery          :  79 %
 Speaker status   :  0
 Torch status     :  1
-Program Counter  :  21
-MAR              :  21
+Program Counter  :  22
+MAR              :  22
 MDR              :  1111111111000010
 IR               :  1111111111000010
 
@@ -687,11 +754,11 @@ IR               :  1111111111000010
 The speaker has been turned on
 
 ***************************************
-Battery          :  83 %
+Battery          :  78 %
 Speaker status   :  1
 Torch status     :  1
-Program Counter  :  22
-MAR              :  22
+Program Counter  :  23
+MAR              :  23
 MDR              :  1111111111000011
 IR               :  1111111111000011
 
