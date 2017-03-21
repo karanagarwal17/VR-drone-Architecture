@@ -1,6 +1,5 @@
 TAKE                          TAKE,0                         	1111111111000000              
 OBS #3,#6                     OBS,4                          	0011                          
-MVR #5,R2                     MVR,7                          	1001                          
 MOV #2,#6                     MOV,4                          	0000                          
 MVR #5,R4                     MVR,7                          	1001                          
 PRO #5                        PRO,1                          	1111000000                    
@@ -16,9 +15,7 @@ REST #3                       REST,1                         	1111001001
 FP @R7,@R8                    FP,5                           	0111                          
 MOV @R7,@R8                   MOV,5                          	0001                          
 BINF                          BINF,0                         	1111111111000100              
-MVR #2,R2                     MVR,7                          	1001                          
 GES @R4                       GES,2                          	1111000111                    
 PRO @R4                       PRO,2                          	1111000001                    
-ILU                           ILU,0                          	1111111111000010              
-SPK                           SPK,0                          	1111111111000011              
 LAND                          LAND,0                         	1111111111000001              
+TAKE                          TAKE,0                         	1111111111000000              
